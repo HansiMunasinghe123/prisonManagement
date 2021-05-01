@@ -211,7 +211,7 @@
         let startDateTime = $(`#startAt`).val();
         let endDateTime = $(`#endAt`).val();
         if (startDateTime !== "" && endDateTime !== "") {
-            if (Date.parse(startDateTime) >= Date.parse(endDateTime) ) {
+            if (Date.parse(startDateTime) > Date.parse(endDateTime) ) {
                 swal({
                     title: "Could you accept those days.. !",
                     icon: "warning",
@@ -227,11 +227,11 @@
             data: $(this).val(),
         }).addClass('form-control').addClass('col-8');
 
-
         let currentYear = new Date().getFullYear();
+        let minValue = $("#startAt").val();
         $(`#endAt`)
             .prop('max', `${currentYear}-12-31`)
-            .prop('min', $("#startDate").val());
+            .prop('min', minValue);
     });
 
     /*$("#institute").change(function () {

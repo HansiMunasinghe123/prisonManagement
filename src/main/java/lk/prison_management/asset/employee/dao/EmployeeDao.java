@@ -21,6 +21,8 @@ public interface EmployeeDao extends JpaRepository< Employee, Integer > {
   List<Employee> findByInstituteOrderByIdDesc(Institute institute);
 
 
+  List<Employee> findByInstituteOrderByIdDesc(Institute institute);
+
   List< Employee > findBySupervisor(Employee employee);
   List< Employee > findByCreatedAtBetween(LocalDateTime form, LocalDateTime to);
 
